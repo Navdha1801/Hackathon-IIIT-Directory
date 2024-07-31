@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Faculty</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+
+  </head>
+  <body>
+    <div class="container">
+		<div class="image">
+			<img src="../static/IIITH_Logo.jpeg" alt="errror">
+		</div>
+		<div class="links">
+			<ul>
+				 <li class="link"><a href="index.html">Home</a></li>
+				 <li class="link"><a href="about.html">About</a></li>
+				<li><div class="dropdown">
+					<button class="dropbtn">Search</button>
+					<div class="dropdown-content">
+					  <a href="student_search.html">Search Student</a>
+					  <a href="faculty_search.html">Search Faculty</a>
+					</div>
+				  </div></li>
+				  <li><div class="dropdown">
+					<button class="dropbtn">Update</button>
+					<div class="dropdown-content">
+					  <a href="update_student.html">Update Student</a>
+					  <a href="update_faculty.html">Update Faculty</a>
+					</div>
+				  </div></li> 
+				  <li><div class="dropdown">
+					<button class="dropbtn">Delete</button>
+					<div class="dropdown-content">
+					  <a href="delete_student.html">Delete Student</a>
+					  <a href="delete_faculty.html">Delete Faculty</a>
+					</div>
+				  </div></li>          <li><div class="dropdown">
+					<button class="dropbtn">Insert</button>
+					<div class="dropdown-content">
+					  <a href="insert_student.html">Insert Student</a>
+					  <a href="insert_faculty.html">Insert Faculty</a>
+					</div>
+				  </div></li> 
+			</ul>
+		</div>
+</div>
+    <h1 id="text-type">Update Faculty</h1>
+    <form method="POST">
+
+      <label for="id-filter"> Enter ID of faculty you want to modify details of: </label>
+      <input id="id-filter" type="text" name="id-filter" />
+      <label for="name-filter"> New Name: </label>
+      <input id="name-filter" type="text" name="name-filter" />
+      <label for="designation-filter"> New Designation: </label>
+      <input id="designation-filter" type="text" name="designation-filter" />
+      <label for="study-filter"> New Study Feild: </label>
+      <input id="study-filter" type="text" name="study-filter" />
+      <label for="research-areas-filter"> New Research Areas: </label>
+      <input id="research-areas-filter" type="text" name="research-areas-filter"/>
+      <label for="research-lab-filter"> New Research Lab: </label>
+      <input id="research-lab-filter" type="text" name="research-lab-filter" />
+
+      <br />
+
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="../static/script.js"></script>
+  </body>
+</html>

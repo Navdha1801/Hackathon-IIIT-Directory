@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+        .image{
+            size: 500px;
+            width: 40px;
+        }
+		.fa {
+		  padding: 20px;
+		  font-size: 30px;
+		  height: 70px;
+		  text-align: center;
+		  text-decoration: none;
+		  border-radius: 50%;
+		}
+
+		/* Add a hover effect if you want */
+		.fa:hover {
+		  opacity: 0.7;
+		}
+
+		/* Set a specific color for each brand */
+
+		/* Facebook */
+		.fa-facebook {
+			width: 70px;
+		  background: #3B5998;
+		  color: white;
+		}
+
+		/* Instagram */
+		.fa-instagram {
+			width: 70px;
+		  background: #ff02ff;
+		  color: white;
+		}
+
+		/* Twitter */
+		.fa-twitter {
+		  background: #55ACEE;
+		  color: white;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			background-color: #f5f5f5;
+			background-image: url('../static/cool-background1.png');
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+		}
+
+		.logo{
+			align-self: flex-start;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+			display: block;
+		}
+
+		nav a:hover {
+			background-color: #555;
+		}
+
+		main {
+			color:#c7fcf4;
+			font-size: large;
+			width: 96vw;
+			padding: 20px;
+			margin: 20px;
+			background-color: #fff;
+			border-style: hidden;
+			box-shadow: 0 0 100px #3b3b3b;
+			background-image: url('../static/cool-background1.png');
+		}
+		.main1 {
+			color: #c7fcf4;
+			width: 96vw;
+			padding: 20px;
+			margin: 20px;
+			background-color: #fff;
+			border-style: hidden;
+			box-shadow: 0 0 100px #3b3b3b;
+			background-image: url('../static/cool-background1.png');
+		}
+		.main2 {
+			align-self: flex-end;
+			color: #c7fcf4;
+			width: 96vw;
+			padding: 20px;
+			margin: 20px;
+			background-color: #fff;
+			border-style: hidden;
+			box-shadow: 0 0 100px #3b3b3b;
+			background-image: url('../static/cool-background1.png');
+		}
+
+		button {
+			padding: 10px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #555;
+		}
+
+		footer {
+			background-color: #cedaff;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+         /* Dropdown Button */
+ .dropbtn {
+  /* background-color: #04AA6D; */
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #75f3e0;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #555;} 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: sticky;
+    top: 0;
+    /* height */
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* float: right; */
+    padding: 10px;
+    padding-right: 0%;
+    background-color: #2c2c2c;
+    color: azure;
+    z-index: 1;
+}
+li{
+    display: inline;
+    padding: 10px 0px 10px 10px;
+    font-size: large;
+    padding-right: 0%;
+    border: 10px;
+}
+/* li a{
+    display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+} */
+img{
+	justify-content: center;
+	margin: 5% 0%;
+    height: 60px;
+
+}
+.container .links{
+    width: 34vw;
+    align-self: center;
+    margin-left: 30%;
+}
+.link a{
+	background-color: #333;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;text-underline-offset: none;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.link a:hover{
+	background-color: #555;
+}
+/* Footer styles */
+footer {
+  background-color: #cedaff;
+  color: #fff;
+  padding: 10px 0;
+}
+
+footer p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+footer .contact{
+	color: #3b3b3b;
+}
+/* Social icons */
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="image">
+			<img src="../static/IIITH_Logo.jpeg" alt="errror">
+		</div>
+		<div class="links">
+			<ul>
+				 <li class="link"><a href="index.html">Home</a></li>
+				 <li class="link"><a href="about.html">About</a></li>
+				<li><div class="dropdown">
+					<button class="dropbtn">Search</button>
+					<div class="dropdown-content">
+					  <a href="student_search.html">Search Student</a>
+					  <a href="faculty_search.html">Search Faculty</a>
+					</div>
+				  </div></li>
+				  <li><div class="dropdown">
+					<button class="dropbtn">Update</button>
+					<div class="dropdown-content">
+					  <a href="update_student.html">Update Student</a>
+					  <a href="update_faculty.html">Update Faculty</a>
+					</div>
+				  </div></li> 
+				  <li><div class="dropdown">
+					<button class="dropbtn">Delete</button>
+					<div class="dropdown-content">
+					  <a href="delete_student.html">Delete Student</a>
+					  <a href="delete_faculty.html">Delete Faculty</a>
+					</div>
+				  </div></li>          <li><div class="dropdown">
+					<button class="dropbtn">Insert</button>
+					<div class="dropdown-content">
+					  <a href="insert_student.html">Insert Student</a>
+					  <a href="insert_faculty.html">Insert Faculty</a>
+					</div>
+				  </div></li> 
+			</ul>
+		</div>
+</div>
+<div style="display: grid;">
+	<main>
+		<h1 style="align-items: center;" id="text-type">IIIT Contact Directory</h1>
+		<p>Welcome to our contact directory webpage! Here, you'll find a comprehensive list of all the key contacts within our organization. From department heads to customer service representatives, this directory is designed to help you quickly and easily find the person you need to connect with. Whether you're a new employee, a current team member, or a valued customer, our contact directory is an essential resource for staying connected. So go ahead and explore the directory to find the right person for your needs. And if you don't find what you're looking for, don't hesitate to reach out to us directly for assistance.</p>
+		<!-- <button onclick="location.href='student.html'">Student</button>
+		<button onclick="location.href='faculty.html'">Faculty</button> -->
+	</main>
+	<span><div class="main1">
+		<h1>Search for the Students</h1>
+			<li><span style="color: #080808;">Use our student search feature to easily find the right match 	for your needs, whether it's a study group partner, roommate, or project collaborator.</span></li>
+		<br>
+			<li><span style="color: #080808;"> Connect with like-minded peers:</span> Our student search area allows you to connect with others who share your interests, major, or background.</li>
+		<br>
+			<li><span style="color: #080808;"> Expand your network: </span>With our student search feature, you can expand your network and meet new people on campus.</li>
+		<br>
+			<li><span style="color: #080808;">Efficient and convenient: </span> student search area is quick and easy to use, making it a convenient way to find and connect with other students.</li>
+		<br>
+			<li><span style="color: #080808;">Comprehensive student database: </span> student search area is powered by a comprehensive student database, ensuring that you have access to a wide range of potential connections.<li><br>
+		</ul>
+		<span style="color: #080808;">Search Page for Students: </span> <button onclick="location.href='student_search.html'" style="color: #cedaff;font-size: large;">Search Student</button>
+	</div></span>
+	<div class="main2">
+		<h1>Search for the Faculty</h1>
+		<p>Welcome to our faculty search area, designed to help you find information about our esteemed faculty members. Our faculty is made up of experienced professionals with diverse backgrounds and expertise, dedicated to providing exceptional education to our students. Use this search area to learn more about our faculty members' research interests, publications, teaching experience, and contact information. Whether you're a current or prospective student, or simply interested in learning more about our faculty, we invite you to explore this search area and discover the exceptional individuals who make up our faculty community.</p>
+		<span style="color: #080808;">Search Page for Students: </span> <button onclick="location.href='faculty_search.html'" style="color: #cedaff;font-size: large;">Search Faculty</button>
+	</div>
+</div>
+	<footer>
+		<div class="footer-container" style="display: flex; justify-content: space-around;">
+			<div class="contact">
+                <br>
+				<span style="font-size: larger;">Contact Us:</span>
+                <br>
+				<span>ayush.sahu@research.iiit.ac.in</span>
+                <br>
+				<span>priet.ukani@research.iiit.ac.in</span>
+                <br>
+				<span>navdha.bansal@students.iiit.ac.in</span>
+			</div>
+		  <div class="footer-social-media">
+			<p style="font-size: 20px;color: #3b3b3b;">Follow Us:</p>
+			<ul>
+				<a href="#" class="fa fa-facebook"></a>
+				<a href="#" class="fa fa-twitter"></a>
+				<a href="#" class="fa fa-instagram"></a>
+			</ul>
+		  </div>
+		</div>
+		<br>
+		<div class="footer-legal">
+		  <p style="color: #3b3b3b;">&copy; 2023 IIIT Directory. All rights reserved.</p>
+		</div>
+	  </footer>
+	  
+	<!-- <footer>
+		<p>Contact Us</p>
+		<p>123 Main Street</p>
+		<p>City, State ZIP</p>
+		<p>Phone: (123) 456-7890</p>
+	</footer> -->
+    <script src="script.js"></script>
+
+</body>
+</html>

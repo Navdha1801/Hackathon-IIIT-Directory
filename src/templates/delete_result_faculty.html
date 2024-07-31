@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deleted Result</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="image">
+			<img src="../static/IIITH_Logo.jpeg" alt="errror">
+		</div>
+		<div class="links">
+			<ul>
+				 <li class="link"><a href="index.html">Home</a></li>
+				 <li class="link"><a href="about.html">About</a></li>
+				<li><div class="dropdown">
+					<button class="dropbtn">Search</button>
+					<div class="dropdown-content">
+					  <a href="student_search.html">Search Student</a>
+					  <a href="faculty_search.html">Search Faculty</a>
+					</div>
+				  </div></li>
+				  <li><div class="dropdown">
+					<button class="dropbtn">Update</button>
+					<div class="dropdown-content">
+					  <a href="update_student.html">Update Student</a>
+					  <a href="update_faculty.html">Update Faculty</a>
+					</div>
+				  </div></li> 
+				  <li><div class="dropdown">
+					<button class="dropbtn">Delete</button>
+					<div class="dropdown-content">
+					  <a href="delete_student.html">Delete Student</a>
+					  <a href="delete_faculty.html">Delete Faculty</a>
+					</div>
+				  </div></li>          <li><div class="dropdown">
+					<button class="dropbtn">Insert</button>
+					<div class="dropdown-content">
+					  <a href="insert_student.html">Insert Student</a>
+					  <a href="insert_faculty.html">Insert Faculty</a>
+					</div>
+				  </div></li> 
+			</ul>
+		</div>
+</div>
+	{% if students %}
+		<h2 id="text-type">Faculty with the following details deleted</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Designtion</th>
+					<th>Study</th>
+					<th>Research Areas</th>
+					<th>Research Centre</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for student in students %}
+					<tr>
+                        <td>{{ student[5] }}</td>
+						<td>{{ student[0] }}</td>
+						<td>{{ student[1] }}</td>
+						<td>{{ student[2] }}</td>
+                        <td>{{ student[3] }}</td>
+                        <td>{{ student[4] }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	{% endif %}
+    <script src="../static/script.js"></script>
+
+</body>
+</html>

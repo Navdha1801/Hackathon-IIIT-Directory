@@ -1,0 +1,267 @@
+<!doctype html>
+<html x-data="{colorMode: localStorage.getItem('colorMode') || localStorage.setItem('colorMode', 'light')}" x-init="$watch('colorMode', val => localStorage.setItem('colorMode', val))" x-bind:class="{'dark': colorMode === 'dark' || (colorMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth h-full overflow-y-auto">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The Play CDN is designed for development purposes only, and is not the best choice for production. -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+  <link id="heading-font" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" media="all" />
+  <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  </style>
+  <link rel="stylesheet" href="../static/style_about.css">
+<script>
+    window.tailwind.config = {
+      "darkMode": "class",
+      "theme": {
+        "fontFamily": {
+          "heading": ["DM Sans", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "\"Segoe UI\"", "Roboto", "\"Helvetica Neue\"", "Arial", "\"Noto Sans\"", "sans-serif", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\"", "\"Noto Color Emoji\""],
+          "body": ["DM Sans", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "\"Segoe UI\"", "Roboto", "\"Helvetica Neue\"", "Arial", "\"Noto Sans\"", "sans-serif", "\"Apple Color Emoji\"", "\"Segoe UI Emoji\"", "\"Segoe UI Symbol\"", "\"Noto Color Emoji\""]
+        },
+        "extend": {
+          "borderRadius": {
+            "global": "5px"
+          },
+          "colors": {
+            "primary": {
+              "50": "#f8f5ff",
+              "100": "#eee6fe",
+              "200": "#ddcefd",
+              "300": "#c1a6fc",
+              "400": "#844df9",
+              "500": "#4d07e4",
+              "600": "#3705a3",
+              "700": "#280477",
+              "800": "#170245",
+              "900": "#0c0123",
+              "950": "#070114",
+              "DEFAULT": "#570df8"
+            },
+            "secondary": {
+              "50": "#fff5fd",
+              "100": "#ffe6f9",
+              "200": "#fecdf3",
+              "300": "#fea4e9",
+              "400": "#fd49d3",
+              "500": "#e802b3",
+              "600": "#a70280",
+              "700": "#79015d",
+              "800": "#470136",
+              "900": "#23001b",
+              "950": "#140010",
+              "DEFAULT": "#f002b8"
+            }
+          }
+        }
+      },
+      "plugins": [window.tailwind.plugin.withOptions(({
+        prefix = "ui"
+      } = {}) => {
+        return ({
+          addVariant
+        }) => {
+          for (let state of ["open", "checked", "selected", "active", "disabled"]) {
+            addVariant(`${prefix}-${state}`, [
+              `&[data-headlessui-state~="${state}"]`,
+              `:where([data-headlessui-state~="${state}"]) &`,
+            ]);
+
+            addVariant(`${prefix}-not-${state}`, [
+              `&[data-headlessui-state]:not([data-headlessui-state~="${state}"])`,
+              `:where([data-headlessui-state]:not([data-headlessui-state~="${state}"])) &:not([data-headlessui-state])`,
+            ]);
+          }
+        };
+      }), ]
+    };
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="../static/style_about.css">
+
+</head>
+
+<body style="background-color: whitesmoke; margin-top: 80px;" x-data="{'openDialogId': ''}" x-on:keydown.escape="openDialogId=''" class='font-body antialiased h-full font-body antialiased text-[#000000] bg-[#fcfcfc] dark:text-[#ffffff] dark:bg-[#031022]'>
+
+  &nbsp;
+    <div style="position: fixed;" class="container">
+		<div class="image">
+			<img style="width: 1200px; height: 56px; max-width: 345%;" src="../static/IIITH_Logo.jpeg" alt="errror">
+		</div>
+		<div class="links">
+			<ul>
+				 <li class="link"><a href="index.html">Home</a></li>
+				 <li class="link"><a href="about.html">About</a></li>
+				<li><div class="dropdown">
+					<button style="color: white; background-color: #151414;" class="dropbtn">Search</button>
+					<div class="dropdown-content">
+					  <a href="student_search.html">Search Student</a>
+					  <a href="faculty_search.html">Search Faculty</a>
+					</div>
+				  </div></li>
+				  <li><div class="dropdown">
+					<button style="color: white; background-color: #151414;"  class="dropbtn">Update</button>
+					<div class="dropdown-content">
+					  <a href="update_student.html">Update Student</a>
+					  <a href="update_faculty.html">Update Faculty</a>
+					</div>
+				  </div></li> 
+				  <li><div style="color: white; background-color: #151414;"  class="dropdown">
+					<button class="dropbtn">Delete</button>
+					<div class="dropdown-content">
+					  <a href="delete_student.html">Delete Student</a>
+					  <a href="delete_faculty.html">Delete Faculty</a>
+					</div>
+				  </div></li>          <li><div class="dropdown">
+					<button style="color: white; background-color: #151414;"  class="dropbtn">Insert</button>
+					<div class="dropdown-content">
+					  <a href="insert_student.html">Insert Student</a>
+					  <a href="insert_faculty.html">Insert Faculty</a>
+					</div>
+				  </div></li> 
+			</ul>
+		</div>
+</div>
+  <div class="">
+    <div class="text-center px-3 py-16 max-w-7xl mx-auto">
+      <h1 class="font-black tracking-tight text-slate-900 text-3xl dark:text-slate-100 sm:text-4xl">We work as a Team!</h1>
+      <p class="mt-3 text-lg max-w-lg mx-auto">Start growing in half the time with an all-in-one website builder - no more long hours spent on the boring stuff!</p>
+      <div style="margin-left: 250px;" class="grid gap-2 mt-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mx-auto">
+        <div class="text-center"><img class="rounded-full w-60 mx-auto mb-4 bg-blue-100" alt="No alt" src="../static/priet.jpeg" />
+          <h1 class="text-2xl font-bold dark:text-slate-200 text-slate-800">Priet Ukani</h1>
+          <br>
+          <a class="inline-flex items-center font-semibold transition-colors duration-200 text-secondary hover:text-secondary-800" href="https://github.com/priet-ukani"><span class=""> Github </span><span class="inline-block w-3 ml-2"><svg class="inline-block w-3 ml-2" class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg></span></a>
+          <!-- <p class="">CEO  &amp; CTO</p> -->
+        </div>
+        <div class="text-center"><img class="rounded-full w-60 mx-auto mb-4 bg-blue-100" alt="No alt" src="../static/Navdha (1).jpeg" />
+          <h1 class="text-2xl font-bold dark:text-slate-200 text-slate-800">Navdha Bansal</h1>
+          <!-- <p class="">Marketing Director</p> -->
+          <br>
+          <a class="inline-flex items-center font-semibold transition-colors duration-200 text-secondary hover:text-secondary-800" href="https://github.com/Navdha1801"><span class=""> Github </span><span class="inline-block w-3 ml-2"><svg class="inline-block w-3 ml-2" class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg></span></a>
+        </div>
+        <div class="text-center"><img class="rounded-full w-60 mx-auto mb-4 bg-blue-100" alt="No alt" src="../static/ayush.jpg" />
+          <h1 class="text-2xl font-bold dark:text-slate-200 text-slate-800">Ayush Sahu</h1>
+          <!-- <p class="">Graphic Designer</p> -->
+          <br>
+          <a class="inline-flex items-center font-semibold transition-colors duration-200 text-secondary hover:text-secondary-800" href="https://github.com/AyushxCentury"><span class=""> Github </span><span class="inline-block w-3 ml-2"><svg class="inline-block w-3 ml-2" class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg></span></a>
+        </div>
+
+      </div> 
+    </div>
+  </div>
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto">We could either watch it happen or be a part of it</h2>
+      <!-- <p class="text-base md:text-lg"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae. </p> -->
+    </div>
+    <div class="max-w-lg space-y-3 sm:mx-auto lg:max-w-xl">
+      <div class="flex items-center p-2 transition-colors duration-200 border shadow group hover:bg-primary-500 hover:border-primary-500 rounded-global">
+        <div class="mr-2"><span class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8"><svg class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8" class="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg></span></div><span class="transition-colors duration-200 group-hover:text-white">Change the world by being yourself.</span>
+      </div>
+      <div class="flex items-center p-2 transition-colors duration-200 border shadow group hover:border-primary-500 hover:bg-primary-500 rounded-global">
+        <div class="mr-2"><span class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8"><svg class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8" class="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg></span></div><span class="transition-colors duration-200 group-hover:text-white">Die with memories, not dreams.</span>
+      </div>
+
+      <div class="flex items-center p-2 transition-colors duration-200 border shadow group hover:border-primary-500 hover:bg-primary-500 rounded-global">
+        <div class="mr-2"><span class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8"><svg class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8" class="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg></span></div><span class="transition-colors duration-200 group-hover:text-white">Simplicity is the ultimate sophistication.</span>
+      </div>
+      <div class="flex items-center p-2 transition-colors duration-200 border shadow group hover:border-primary-500 hover:bg-primary-500 rounded-global">
+        <div class="mr-2"><span class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8"><svg class="w-6 h-6 transition-colors duration-200 group-hover:text-white text-primary-500 sm:w-8 sm:h-8" class="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg></span></div><span class="transition-colors duration-200 group-hover:text-white">Yesterday you said tomorrow. Just do it today.</span>
+      </div>
+    </div>
+  </div>
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="mx-auto sm:text-center lg:max-w-2xl">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <div class="">
+          <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider uppercase rounded-full bg-secondary text-white"> Our Place</p>
+        </div>
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl md:mx-auto">IIIT Hyderabad is amazing!</h2>
+      </div>
+      <div class="mb-4 lg:mb-6"><img class="object-cover w-full h-56 rounded sm:h-64 md:h-80 lg:h-96 lg:object-contain" alt="No alt" src="../static/IIITHyd.webp" /></div>
+      <p class="max-w-xl mb-4 text-base sm:mx-auto">We provide a contact directory of students and faculties here. </p>
+      <a class="inline-flex items-center font-semibold transition-colors duration-200 text-secondary hover:text-secondary-800" href="https://www.iiit.ac.in"><span class=""> Learn more </span><span class="inline-block w-3 ml-2"><svg class="inline-block w-3 ml-2" class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg></span></a>
+    </div>
+  </div>
+  <div class="py-6 sm:py-8 lg:py-12">
+    <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="mb-10 md:mb-16">
+        <h2 class="font-bold text-center mb-4 text-3xl text-slate-900 dark:text-slate-100 md:mb-6 lg:text-4xl">Our competitive advantage</h2>
+        <p class="max-w-screen-md md:text-lg text-center mx-auto">The unique features that we provide are: </p>
+      </div>
+      <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16">
+        <div class="flex flex-col items-center">
+          <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4"><span class="w-full h-full text-primary"><svg class="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg></span></div>
+          <h3 class="text-lg md:text-xl font-semibold text-center mb-2">Growth</h3>
+          <p class="text-center mb-2">We are adding more and more data day by day to fill the database.</p><a class="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700" href="#">More</a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4"><span class="w-full h-full text-primary"><svg class="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg></span></div>
+          <h3 class="text-lg md:text-xl font-semibold text-center mb-2">Security</h3>
+          <p class="text-center mb-2">Your data is safe and secure with us. </p><a class="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700" href="#">More</a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4"><span class="w-full h-full text-primary"><svg class="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg></span></div>
+          <h3 class="text-lg md:text-xl font-semibold text-center mb-2">Cloud</h3>
+          <p class="text-center mb-2">All data is stored on the cloud and no storage is consumed on the user end.</p><a class="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700" href="#">More</a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4"><span class="w-full h-full text-primary"><svg class="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg></span></div>
+          <h3 class="text-lg md:text-xl font-semibold text-center mb-2">Speed</h3>
+          <p class="text-center mb-2">Searching is very fast in almost negligible time for a large data.</p><a class="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700" href="#">More</a>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4"><span class="w-full h-full text-primary"><svg class="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg></span></div>
+          <h3 class="text-lg md:text-xl font-semibold text-center mb-2">Support</h3>
+          <p class="text-center mb-2">We are working to make this Application more wide with full of more features.</p><a class="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700" href="#">More</a>
+        </div>
+     
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="mx-auto px-4 max-w-7xl">
+      <div class="grid -mx-4 sm:grid-cols-2 lg:grid-cols-4">
+    
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

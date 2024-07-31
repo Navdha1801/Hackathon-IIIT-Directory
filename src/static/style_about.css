@@ -1,0 +1,293 @@
+
+
+ 
+  /* Add some transitions */
+  input,
+  textarea,
+  select {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  ::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #ccc;
+  }
+  
+  :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+    opacity: 1;
+  }
+  
+  ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ccc;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #ccc;
+  } 
+  
+  .image{
+      size: 500px;
+      width: 40px;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    height: 70px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+      width: 70px;
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Instagram */
+  .fa-instagram {
+      width: 70px;
+    background: #ff02ff;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background-color: #f5f5f5;
+      /* background-image: url('../static/black.jpeg'); */
+      /* background-image: url('../static/cool-background1.png'); */
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  
+  #text-type
+  {
+      /* color: #f37575; */
+      color: whitesmoke;
+      font-size: 50px;
+      background-color: transparent;
+  
+  
+  /* Add a text shadow with 1px blur radius, 1px horizontal offset and 1px vertical offset */
+  text-shadow: 1px 1px 1px black;
+  
+  }
+  
+  header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+  }
+  
+  .logo{
+      align-self: flex-start;
+  }
+  
+  nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+  }
+  
+  nav a:hover {
+      background-color: #555;
+  }
+  
+  main {
+      color:#c7fcf4;
+      font-size: large;
+      width: 96vw;
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border-style: hidden;
+      box-shadow: 0 0 100px #3b3b3b;
+      /* background-image: url('../static/cool-background1.png'); */
+  }
+  .main1 {
+      color: #c7fcf4;
+      width: 96vw;
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border-style: hidden;
+      box-shadow: 0 0 100px #3b3b3b;
+      background-image: url('../static/cool-background1.png');
+  }
+  .main2 {
+      align-self: flex-end;
+      color: #c7fcf4;
+      width: 96vw;
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border-style: hidden;
+      box-shadow: 0 0 100px #3b3b3b;
+      /* background-image: url('../static/cool-background1.png'); */
+  }
+  
+  button {
+      padding: 10px;
+      background-color: #151414;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  button:hover {
+      background-color: #555;
+  }
+  
+  footer {
+      background-color: #cedaff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+  }
+   /* Dropdown Button */
+  .dropbtn {
+  /* background-color: #04AA6D; */
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+  position: relative;
+  display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #75f3e0;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #555;} 
+  
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  .container{
+    width: 100vw;
+  position: sticky;
+  top: 0;
+  /* height */
+  margin: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* float: right; */
+  padding: 10px;
+  padding-right: 0%;
+  background-color: transparent;
+  color: azure;
+  z-index: 1;
+  }
+  li{
+  display: inline;
+  padding: 10px 10px 10px 10px;
+  font-size: large;
+  padding-right: 0%;
+  border: 10px;
+  }
+  /* li a{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  } */
+  img{
+  justify-content: center;
+  margin: 5% 0%;
+  height: 60px;
+  
+  }
+  .container .links{
+  width: 40vw;
+  align-self: center;
+  margin-left: 40%;
+  }
+  .link a{
+  background-color: #151414;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;text-underline-offset: none;
+  text-decoration: none;
+  border-radius: 5px;
+  }
+  .link a:hover{
+  background-color: #555;
+  }
+  /* Footer styles */
+ 
